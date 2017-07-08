@@ -10,15 +10,20 @@ public class Controller {
 
     public static void start(GameType gt) {
         if (gt == GameType.NEW) {
-            // some exposition about the game...
-
+            UI.cls();
             String name = UI.readStr("Enter your name: ");
             Player player = Player.getInstance(name);
+            UI.println("Generating map...");
             Map map = Map.getInstance();
-
+            game = new Game(player, map);
+            UI.println("Saving game...");
+            Save.save(game);
+            UI.cls();
         } else {
             game = Save.loadSave();
         }
+
+        loop();
     }
 
     private static void loop() {

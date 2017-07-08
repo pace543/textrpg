@@ -1,4 +1,6 @@
 package io.github.pace543.textrpg.item;
 
-public enum Healing {
+public enum Healing implements ItemType {
+    ;
+
 }
