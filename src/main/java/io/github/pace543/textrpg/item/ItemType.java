@@ -1,5 +1,9 @@
 package io.github.pace543.textrpg.item;
 
-public interface ItemType {
+import io.github.pace543.textrpg.battle.Element;
 
+public interface ItemType {
+    int getCost();
+    Element getElement();
+    String getName();
 }

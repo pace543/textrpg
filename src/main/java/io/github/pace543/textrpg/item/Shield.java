@@ -16,7 +16,6 @@ public enum Shield implements ItemType {
     EARTH       ("Earth Shield", 1000, Element.EARTH, 9, 7),
     ELECTRIC    ("Electric Shield", 1000, Element.ELECTRIC, 9, 7);
 
-
     private String name;
     private int cost;
     private Element element;
@@ -31,14 +30,17 @@ public enum Shield implements ItemType {
         this.mDef = mDef;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public int getCost() {
         return cost;
     }
 
+    @Override
     public Element getElement() {
         return element;
     }

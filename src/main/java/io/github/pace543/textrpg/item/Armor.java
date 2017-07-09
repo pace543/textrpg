@@ -30,14 +30,17 @@ public enum Armor implements ItemType {
         this.mDef = mDef;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public int getCost() {
         return cost;
     }
 
+    @Override
     public Element getElement() {
         return element;
     }

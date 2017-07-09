@@ -78,4 +78,17 @@ public class Player extends Entity {
     public ArrayList<Item> getInventory() {
         return inventory;
     }
+
+    public void removeFromInventory(Item item) {
+        inventory.remove(item);
+    }
+
+    public boolean addToInventory(Item item) {
+        if (inventory.size() < 100) {
+            inventory.add(item);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
