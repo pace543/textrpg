@@ -1,17 +1,25 @@
 package io.github.pace543.textrpg.controller;
 
-import io.github.pace543.textrpg.map.Map;
 import io.github.pace543.textrpg.entity.Player;
+import com.moandjiezana.toml.Toml;
+import com.moandjiezana.toml.TomlWriter;
 
-public class Save {
-    public static void save(Game g) {
-        Player player = g.getPlayer();
-        Map map = g.getMap();
+import java.io.File;
+import java.io.IOException;
 
-
+class Save {
+    static void save(Player p, String filename) throws IOException {
+        TomlWriter writer = new TomlWriter();
+        File file = new File("./" + filename + ".save");
+        writer.write(p, file);
     }
 
-    public static Game loadSave() {
-        return null;
+    static Player loadSave(String filename) {
+        File file = new File("./" + filename + ".save");
+        if (!file.exists()) {
+            return null;
+        }
+        Toml toml = new Toml().read(new File("./" + filename + ".save"));
+        return toml.to(Player.class);
     }
 }

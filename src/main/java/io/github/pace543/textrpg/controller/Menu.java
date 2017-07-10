@@ -22,6 +22,11 @@ final class Menu {
     }
 
     private final ArrayList<MenuItem> menu;
+
+    public String getName() {
+        return name;
+    }
+
     private final String name;
 
     Menu(String name) {

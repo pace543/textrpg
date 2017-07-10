@@ -30,7 +30,7 @@ public class Map {
     }
 
     private void clear() {
-        map = new Tile[WIDTH][HEIGHT];
+        map = new Tile[HEIGHT][WIDTH];
     }
 
     private void placeRooms() {
@@ -42,7 +42,7 @@ public class Map {
             int x = RNG.getRInt(HEIGHT - h + 1);
             int y = RNG.getRInt(WIDTH - w + 1);
 
-            Room newRoom = new Room(x, y, h, w);
+            Room newRoom = new Room(x, y, w, h);
 
             boolean canBePlaced = true;
             for (Room r : rooms) {

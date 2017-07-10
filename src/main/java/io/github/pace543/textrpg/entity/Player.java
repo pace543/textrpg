@@ -6,37 +6,24 @@ import io.github.pace543.textrpg.item.*;
 import java.util.ArrayList;
 
 public class Player extends Entity {
-    private static Player player = null;
-
     private Armor armor = null;
     private Shield shield = null;
     private Weapon weapon = null;
     private ArrayList<Item> inventory = new ArrayList<>();
 
-    private Player(String name) {
+    public Player(String name) {
         super(name, 10, 10,
                 20, 20,4, 4, 4, 4, 3);
         this.getPhysAttacks().add(PhysAttack.ATTACK);
     }
 
-    private Player(String name, int health, int maxHealth, int magic, int maxMagic, int pAttack,
+    public Player(String name, int health, int maxHealth, int magic, int maxMagic, int pAttack,
                   int pDefense, int mAttack, int mDefense, int speed) {
         super(name, health, maxHealth, magic, maxMagic, pAttack, pDefense, mAttack, mDefense, speed);
     }
 
     public void battle() {
 
-    }
-
-    public static Player getInstance(String name) {
-        player = new Player(name);
-        return player;
-    }
-
-    public static Player getInstance(String name, int health, int maxHealth, int magic, int maxMagic, int pAttack,
-                                     int pDefense, int mAttack, int mDefense, int speed) {
-        player = new Player(name, health, maxHealth, magic, maxMagic, pAttack, pDefense, mAttack, mDefense, speed);
-        return player;
     }
 
     public Shield getShield() {
