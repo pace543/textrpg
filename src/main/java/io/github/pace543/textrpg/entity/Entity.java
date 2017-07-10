@@ -7,20 +7,20 @@ import java.util.ArrayList;
 
 public abstract class Entity {
     private String name;
-    private double health;
-    private double maxHealth;
-    private double magic;
-    private double maxMagic;
-    private double pAttack;
-    private double pDefense;
-    private double mAttack;
-    private double mDefense;
-    private double speed;
+    private int health;
+    private int maxHealth;
+    private int magic;
+    private int maxMagic;
+    private int pAttack;
+    private int pDefense;
+    private int mAttack;
+    private int mDefense;
+    private int speed;
     private ArrayList<PhysAttack> physAttacks = new ArrayList<>();
     private ArrayList<MagAttack> magAttacks = new ArrayList<>();
 
-    public Entity(String name, double health, double maxHealth, double magic, double maxMagic,
-                  double pAttack, double pDefense, double mAttack, double mDefense, double speed) {
+    public Entity(String name, int health, int maxHealth, int magic, int maxMagic,
+                  int pAttack, int pDefense, int mAttack, int mDefense, int speed) {
         this.name = name;
         this.health = health;
         this.maxHealth = maxHealth;
@@ -39,83 +39,55 @@ public abstract class Entity {
         return name;
     }
 
-    public double getHealth() {
-        return health;
-    }
-
-    public double getMaxHealth() {
-        return maxHealth;
-    }
-
-    public double getMagic() {
-        return magic;
-    }
-
-    public double getMaxMagic() {
-        return maxMagic;
-    }
-
-    public double getpAttack() {
-        return pAttack;
-    }
-
-    public double getpDefense() {
-        return pDefense;
-    }
-
-    public double getmAttack() {
-        return mAttack;
-    }
-
-    public double getmDefense() {
-        return mDefense;
-    }
-
-    public double getSpeed() {
-        return speed;
-    }
-
-    public void setHealth(double health) {
-        this.health = health;
-    }
-
-    public void setMaxHealth(double maxHealth) {
-        this.maxHealth = maxHealth;
-    }
-
-    public void setMagic(double magic) {
-        this.magic = magic;
-    }
-
-    public void setMaxMagic(double maxMagic) {
-        this.maxMagic = maxMagic;
-    }
-
-    public void setpAttack(double pAttack) {
-        this.pAttack = pAttack;
-    }
-
-    public void setpDefense(double pDefense) {
-        this.pDefense = pDefense;
-    }
-
-    public void setmAttack(double mAttack) {
-        this.mAttack = mAttack;
-    }
-
-    public void setmDefense(double mDefense) {
-        this.mDefense = mDefense;
-    }
-
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
-
     public ArrayList<PhysAttack> getPhysAttacks() {
         return physAttacks;
     }
 
     public ArrayList<MagAttack> getMagAttacks() {
         return magAttacks;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public int getMagic() {
+        return magic;
+    }
+
+    public void setMagic(int magic) {
+        this.magic = magic;
+    }
+
+    public int getMaxMagic() {
+        return maxMagic;
+    }
+
+    public int getpAttack() {
+        return pAttack;
+    }
+
+    public int getpDefense() {
+        return pDefense;
+    }
+
+    public int getmAttack() {
+        return mAttack;
+    }
+
+    public int getmDefense() {
+        return mDefense;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 }

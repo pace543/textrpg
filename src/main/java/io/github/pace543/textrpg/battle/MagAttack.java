@@ -64,4 +64,10 @@ public enum MagAttack implements AttackType {
     }
 
     public Element getElement() { return this.element; }
+
+    @Override
+    public String toString() {
+        return name + " <" + element.name() + "> PWR: " + power + " ACC: " + accuracy + " CRIT: "
+                + critical + " COST: " + cost;
+    }
 }

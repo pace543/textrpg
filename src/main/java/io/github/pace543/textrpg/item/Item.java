@@ -24,4 +24,9 @@ public class Item {
     public void setHealth(double health) {
         this.health = health;
     }
+
+    @Override
+    public String toString() {
+        return thing.getName() + " <" + thing.getElement().name() + "> HEALTH: " + (int) (health * 100);
+    }
 }
