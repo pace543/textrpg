@@ -41,16 +41,16 @@ final class Menu {
     void printMenu() {
         UI.printLine();
         UI.print("| %s", name);
-        UI.printSpaces(57 - name.length());
+        UI.printSpaces(58 - name.length());
         UI.println("|");
-        UI.println("| ======================================================== |");
+        UI.println("| ========================================================= |");
         for (int j = 0; j < menu.size(); j++) {
             UI.print("| %d) %s", j + 1, menu.get(j).getName());
             int numLength = Integer.toString(j + 1).length();
-            UI.printSpaces(55 - numLength - menu.get(j).getName().length());
+            UI.printSpaces(56 - numLength - menu.get(j).getName().length());
             UI.println("|");
         }
-        UI.println("|__________________________________________________________|");
+        UI.println("|___________________________________________________________|");
     }
 
     void getAndExecuteChoice() {
