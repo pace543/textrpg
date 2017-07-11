@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Map {
     private ArrayList<Room> rooms = new ArrayList<>();
-    private static final int MAX_ROOMS = 10;
+    public static final int MAX_ROOMS = 10;
     private static final int HEIGHT = 30;
     private static final int WIDTH = 60;
     private Tile[][] map = new Tile[HEIGHT][WIDTH];
@@ -21,11 +21,6 @@ public class Map {
         Map map = new Map();
         map.placeRooms();
         map.fillEmptySpaces();
-        return map;
-    }
-
-    public static Map getInstance(Tile[][] tileset) {
-        Map map = new Map(tileset);
         return map;
     }
 
@@ -104,4 +99,6 @@ public class Map {
     public Tile[][] getMap() {
         return map;
     }
+
+    public ArrayList<Room> getRooms() { return rooms; }
 }
