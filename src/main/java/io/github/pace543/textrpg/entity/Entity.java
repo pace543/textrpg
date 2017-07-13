@@ -53,18 +53,22 @@ public abstract class Entity {
 
     public void setHealth(int health) {
         this.health = health;
+        if (health > maxHealth) {
+            health = maxHealth;
+        }
     }
 
     public int getMaxHealth() {
         return maxHealth;
     }
 
-    public int getMagic() {
-        return magic;
-    }
+    public int getMagic() { return magic; }
 
     public void setMagic(int magic) {
         this.magic = magic;
+        if (magic > maxMagic) {
+            magic = maxMagic;
+        }
     }
 
     public int getMaxMagic() {

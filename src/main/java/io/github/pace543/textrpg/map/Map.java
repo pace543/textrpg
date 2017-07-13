@@ -7,9 +7,11 @@ import java.util.ArrayList;
 public class Map {
     private ArrayList<Room> rooms = new ArrayList<>();
     public static final int MAX_ROOMS = 10;
-    private static final int HEIGHT = 30;
-    private static final int WIDTH = 60;
+    public static final int HEIGHT = 30;
+    public static final int WIDTH = 60;
     private Tile[][] map = new Tile[HEIGHT][WIDTH];
+    private Tile playerTile;
+    private Tile staircaseTile;
 
     private Map(){}
 
@@ -101,4 +103,16 @@ public class Map {
     }
 
     public ArrayList<Room> getRooms() { return rooms; }
+
+    public Tile getPlayerTile() { return playerTile; }
+
+    public void setPlayerTile(Tile tile) { this.playerTile = tile; }
+
+    public Tile getStaircaseTile() {
+        return staircaseTile;
+    }
+
+    public void setStaircaseTile(Tile staircaseTile) {
+        this.staircaseTile = staircaseTile;
+    }
 }

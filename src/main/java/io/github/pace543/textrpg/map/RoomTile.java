@@ -7,6 +7,8 @@ public class RoomTile extends Tile {
         super(x, y);
     }
 
+    private boolean isStaircase;
+
     @Override
     public boolean canPlayerMoveHere() {
         return true;
@@ -21,8 +23,18 @@ public class RoomTile extends Tile {
     public String toString() {
         if (this.isPlayerHere()) {
             return "P";
+        } else if (this.isStaircase()) {
+            return "S";
         } else {
             return "o";
         }
+    }
+
+    public boolean isStaircase() {
+        return isStaircase;
+    }
+
+    public void setStaircase(boolean staircase) {
+        isStaircase = staircase;
     }
 }

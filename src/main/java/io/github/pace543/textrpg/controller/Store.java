@@ -175,7 +175,7 @@ class Store {
     private static void buy(ItemType item) {
         if (player.getMoney() >= item.getCost()) {
             player.setMoney(player.getMoney() - item.getCost());
-            player.addToInventory(new Item(item));
+            player.getInventory().add(new Item(item));
             UI.println("Bought %s.", item.getName());
             UI.readStr("Press enter to continue...");
         } else {
@@ -186,7 +186,7 @@ class Store {
 
     private static void sell(Item item, int sellValue) {
         player.setMoney(player.getMoney() + sellValue);
-        player.removeFromInventory(item);
+        player.getInventory().remove(item);
         UI.println("Sold %s.", item.toString());
         UI.readStr("Press enter to continue...");
     }

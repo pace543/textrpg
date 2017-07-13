@@ -33,19 +33,6 @@ public class Player extends Entity {
         return inventory;
     }
 
-    public void removeFromInventory(Item item) {
-        inventory.remove(item);
-    }
-
-    public boolean addToInventory(Item item) {
-        if (inventory.size() < 100) {
-            inventory.add(item);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public int getMoney() {
         return money;
     }

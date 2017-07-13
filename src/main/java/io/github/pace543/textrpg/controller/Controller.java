@@ -63,7 +63,7 @@ class Controller {
         town.getAndExecuteChoice();
     }
 
-    private static void playerInfo() {
+    static void playerInfo() {
         UI.cls();
         Menu initial = new Menu("Player Info");
         initial.addMenuItem("See Player Stats", () -> {
@@ -104,14 +104,12 @@ class Controller {
             UI.readStr("Press enter to continue...");
             playerInfo();
         });
-        initial.addMenuItem("Return to Town", () -> { });
+        initial.addMenuItem("Previous", () -> { });
         initial.printMenu();
         initial.getAndExecuteChoice();
     }
 
     private static void dungeon() {
-
+        new Dungeon(player).loop();
     }
-
-
 }
