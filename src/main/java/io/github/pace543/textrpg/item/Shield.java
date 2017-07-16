@@ -52,4 +52,10 @@ public enum Shield implements ItemType {
     public int getmDef() {
         return mDef;
     }
+
+    @Override
+    public String toString() {
+        return this.getName() + " <" + this.getElement().name() + "> PDEF: " + this.getpDef()
+                + " MDEF: " + this.getmDef() + " COST: " + this.getCost();
+    }
 }

@@ -5,11 +5,12 @@ import io.github.pace543.textrpg.item.*;
 import io.github.pace543.textrpg.entity.Player;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 
-class Controller {
+public class Controller {
     public enum GameType { NEW, LOAD }
 
-    static Player player;
+    public static Player player;
     private static String filename;
 
     static void start(GameType gt) {
@@ -44,10 +45,10 @@ class Controller {
     private static void townMenu() {
         Menu town = new Menu("Welcome to Town!");
         town.addMenuItem("Go to Infinite Dungeon", Controller::dungeon);
-        town.addMenuItem("Go to Armor Store", Store::armorStore);
-        town.addMenuItem("Go to Shield Store", Store::shieldStore);
-        town.addMenuItem("Go to Weapon Store", Store::weaponStore);
-        town.addMenuItem("Go to Healing Store", Store::healingStore);
+        town.addMenuItem("Go to Armor Store", () -> new Store<>(Armor.class).start());
+        town.addMenuItem("Go to Shield Store", () -> new Store<>(Shield.class).start());
+        town.addMenuItem("Go to Weapon Store", () -> new Store<>(Weapon.class).start());
+        town.addMenuItem("Go to Healing Store", () -> new Store<>(Healing.class).start());
         town.addMenuItem("Player Info", Controller::playerInfo);
         town.addMenuItem("Save and Exit", () -> {
             try {
@@ -88,7 +89,7 @@ class Controller {
         });
         initial.addMenuItem("See Player Magic Attacks", () -> {
             UI.cls();
-            ArrayList<MagAttack> magAttacks = player.getMagAttacks();
+            EnumSet<MagAttack> magAttacks = player.getMagAttacks();
             for (MagAttack ma : magAttacks) {
                 UI.println(ma.toString());
             }

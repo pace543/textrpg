@@ -5,7 +5,7 @@ import io.github.pace543.textrpg.map.Tile;
 
 import java.io.Console;
 
-public class UI {
+class UI {
     private static Console c;
 
     static void init() {
@@ -34,7 +34,7 @@ public class UI {
         print(str + "\n");
     }
 
-    static void println(String str, Object...args) {
+    static void println(String str, Object... args) {
         print(str + "\n", args);
     }
 
@@ -73,9 +73,9 @@ public class UI {
 
     static void printMap(Map map) {
         Tile[][] tileset = map.getMap();
-        for (int x = 0; x < tileset.length; x++) {
-            for (int y = 0; y < tileset[x].length; y++) {
-                print(tileset[x][y].toString());
+        for (Tile[] aTileset : tileset) {
+            for (Tile anATileset : aTileset) {
+                print(anATileset.toString());
             }
             println();
         }

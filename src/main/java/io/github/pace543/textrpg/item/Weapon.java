@@ -46,4 +46,10 @@ public enum Weapon implements ItemType {
     public int getpDamage() {
         return pDamage;
     }
+
+    @Override
+    public String toString() {
+        return this.getName() + " <" + this.getElement().name() + "> ATK: " + this.getpDamage()
+                + " COST: " + this.getCost();
+    }
 }

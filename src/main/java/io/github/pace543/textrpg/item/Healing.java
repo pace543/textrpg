@@ -44,4 +44,10 @@ public enum Healing implements ItemType {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return this.getName() + " <" + this.getElement().name() + "> HBACK: " + this.getHealthBack()
+                + " MBACK: " + this.getMagicBack() + " COST: " + this.getCost();
+    }
 }
