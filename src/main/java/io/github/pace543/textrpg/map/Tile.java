@@ -22,8 +22,6 @@ public abstract class Tile {
 
     public abstract boolean canPlayerMoveHere();
 
-    public abstract Entity spawn();
-
     public int getX() {
         return x;
     }

@@ -1,5 +1,6 @@
 package io.github.pace543.textrpg.map;
 
+import io.github.pace543.textrpg.entity.Enemy;
 import io.github.pace543.textrpg.entity.Entity;
 
 public class RoomTile extends Tile {
@@ -14,8 +15,7 @@ public class RoomTile extends Tile {
         return true;
     }
 
-    @Override
-    public Entity spawn() {
+    public Enemy spawn(int floorNum) {
         return null;
     }
 

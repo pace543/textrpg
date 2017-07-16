@@ -8,6 +8,35 @@ import java.util.ArrayList;
 public abstract class Entity {
     private String name;
     private int health;
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
+    public void setMaxMagic(int maxMagic) {
+        this.maxMagic = maxMagic;
+    }
+
+    public void setpAttack(int pAttack) {
+        this.pAttack = pAttack;
+    }
+
+    public void setpDefense(int pDefense) {
+        this.pDefense = pDefense;
+    }
+
+    public void setmAttack(int mAttack) {
+        this.mAttack = mAttack;
+    }
+
+    public void setmDefense(int mDefense) {
+        this.mDefense = mDefense;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
     private int maxHealth;
     private int magic;
     private int maxMagic;
@@ -16,11 +45,9 @@ public abstract class Entity {
     private int mAttack;
     private int mDefense;
     private int speed;
-    private ArrayList<PhysAttack> physAttacks = new ArrayList<>();
-    private ArrayList<MagAttack> magAttacks = new ArrayList<>();
 
-    public Entity(String name, int health, int maxHealth, int magic, int maxMagic,
-                  int pAttack, int pDefense, int mAttack, int mDefense, int speed) {
+    Entity(String name, int health, int maxHealth, int magic, int maxMagic,
+           int pAttack, int pDefense, int mAttack, int mDefense, int speed) {
         this.name = name;
         this.health = health;
         this.maxHealth = maxHealth;
@@ -33,18 +60,8 @@ public abstract class Entity {
         this.speed = speed;
     }
 
-    public abstract void battle();
-
     public String getName() {
         return name;
-    }
-
-    public ArrayList<PhysAttack> getPhysAttacks() {
-        return physAttacks;
-    }
-
-    public ArrayList<MagAttack> getMagAttacks() {
-        return magAttacks;
     }
 
     public int getHealth() {

@@ -1,5 +1,6 @@
 package io.github.pace543.textrpg.controller;
 
+import io.github.pace543.textrpg.entity.Enemy;
 import io.github.pace543.textrpg.entity.Entity;
 import io.github.pace543.textrpg.entity.Player;
 import io.github.pace543.textrpg.item.*;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 class Dungeon {
     private Map map;
     private Player player;
+    private int floorNum;
     private boolean exit;
 
     Dungeon(Player p) {
@@ -27,6 +29,7 @@ class Dungeon {
     }
 
     private void floor() {
+        floorNum++;
         map = Map.getInstance();
         setPlayerOnFloor();
         setStaircaseOnFloor();
@@ -37,7 +40,7 @@ class Dungeon {
                 return;
             }
             menu();
-            Entity e = map.getPlayerTile().spawn();
+            Enemy e = ((RoomTile) map.getPlayerTile()).spawn(floorNum);
             if (e != null && !exit && !map.getPlayerTile().equals(map.getStaircaseTile())) {
                 battle(e);
             }
@@ -55,7 +58,7 @@ class Dungeon {
         map.setStaircaseTile(staircaseTile);
     }
 
-    private void battle(Entity enemy) {
+    private void battle(Enemy enemy) {
 
     }
 

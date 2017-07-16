@@ -1,7 +1,7 @@
 package io.github.pace543.textrpg.battle;
 
 public enum Damage {
-    NORMAL, LESS_EFFECTIVE, SUPER_EFFECTIVE;
+    NORMAL, LESS_EFFECTIVE, SUPER_EFFECTIVE, NON_EFFECTIVE;
 
     public static Damage getEffectiveness(Element attacker, Element defender) {
         switch (attacker) {
@@ -64,6 +64,11 @@ public enum Damage {
                     case ELECTRIC:  return NORMAL;
                     case NEUTRAL:   return NORMAL;
                     default:        return NORMAL;
+                }
+            case HEAL:
+                switch (defender) {
+                    case HEAL:      return SUPER_EFFECTIVE;
+                    default:        return NON_EFFECTIVE;
                 }
             default: return NORMAL;
         }
